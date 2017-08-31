@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Hero } from './hero';
 
 @Component({
-  selector: 'hero-detail',
+  selector: 'hero-detail', //CSS selector name
   template: `
     <div *ngIf="hero">
       <h2>{{hero.name}} details!</h2>
@@ -19,5 +19,4 @@ import { Hero } from './hero';
 
 export class HeroDetailComponent{
   @Input() hero: Hero; //receives hero input property and binds to that property with its template
-}
-
+};
