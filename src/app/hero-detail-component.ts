@@ -1,18 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import 'rxjs/add/operator/switchMap'; //use with route parameters Observable
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap'; //use with route parameters Observable
 
-import { HeroService } from './hero.service';
 import { Hero } from './hero';
+import { HeroService } from './hero.service';
 
 @Component({
   selector: 'hero-detail', //CSS selector name
   templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css']
 })
 
 export class HeroDetailComponent implements OnInit{
-  @Input() hero: Hero; //receives hero input property and binds to that property with its template
+  hero: Hero;
 
   constructor(
     private heroService: HeroService,
